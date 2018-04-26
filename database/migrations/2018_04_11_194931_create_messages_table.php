@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHamburgersTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateHamburgersTable extends Migration
      */
     public function up()
     {
-        Schema::create('hamburgers', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('name');
-			$table->string('author');
-			$table->text('overview');
+            $table->string('name');
+            $table->string('email');
+            $table->string('link');
+            $table->text('text');
+            $table->string('ip')->nullable();
+            $table->string('browser_info')->nullable();
             $table->timestamps();
         });
     }

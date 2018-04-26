@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('burgers');
+    return view('guestBook');
 });
